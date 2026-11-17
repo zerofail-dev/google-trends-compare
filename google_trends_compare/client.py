@@ -43,7 +43,7 @@ class TrendsClient:
     ) -> tuple[list[str], dict[str, list[float]]]:
         """Return (dates, {keyword: values}) for at most 5 keywords on one 0-100 scale."""
         if not 1 <= len(keywords) <= 5:
-            raise ValueError("Google Trends compares 1 to 5 terms per request")
+            raise ValueError("the explore endpoint accepts 1 to 5 terms per request")
         req = {
             "comparisonItem": [{"keyword": k, "geo": geo, "time": timeframe} for k in keywords],
             "category": 0,

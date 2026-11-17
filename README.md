@@ -9,12 +9,31 @@ a 50 in one batch is not a 50 in the next. This library fixes that with an **anc
 same keyword is included in every batch, and each batch is rescaled by the anchor's values.
 
 ```bash
-pip install git+https://github.com/zerofail-dev/google-trends-compare
-python -m google_trends_compare notion jira asana trello clickup basecamp wrike airtable --geo US
+python3 -m venv .venv
+.venv/bin/pip install git+https://github.com/zerofail-dev/google-trends-compare
+.venv/bin/python -m google_trends_compare notion jira asana trello clickup basecamp wrike airtable --geo US
 ```
 
-The output is one table: every keyword with its rank, its average interest on the common scale,
-and its share of the total.
+(A virtual environment avoids the `externally-managed-environment` error that recent Debian and
+Ubuntu systems raise on a global `pip install`. `pipx` or `uv` work too.)
+
+A real run on 2026-11-17 (US, past 12 months):
+
+```text
+rank  keyword                   average  share %  note
+   1  notion                      64.23    37.13
+   2  jira                        36.11    20.88
+   3  asana                       19.57    11.31
+   4  trello                      16.98     9.82
+   5  airtable                    12.00     6.94
+   6  basecamp                    11.15     6.45
+   7  clickup                     10.45     6.04
+   8  wrike                        2.49     1.44
+```
+
+Eight keywords, two Google Trends comparisons sharing the anchor `notion`, one scale: every keyword is directly comparable with the
+others. `average` is the mean interest over the period on that common scale (100 is the single
+highest point of all keywords), and `share %` is each keyword's part of the total.
 
 ## How it works
 

@@ -1,0 +1,17 @@
+[project]
+name = "google-trends-compare"
+version = "0.1.0"
+description = "Compare any number of Google Trends keywords on one common 0-100 scale, with an anchor term."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["curl_cffi>=0.13"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

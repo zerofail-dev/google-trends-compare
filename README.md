@@ -2,8 +2,9 @@
 
 Compare **any number of Google Trends keywords on one common 0-100 scale**, in plain Python.
 
-Google Trends compares at most 5 terms per request (a 6th term is refused with HTTP 400), and it
-rescales every request so that its own peak is 100. Two requests are therefore **not comparable**:
+The Google Trends API endpoint this library calls compares at most 5 terms per request (a 6th
+term is refused with HTTP 400; the website itself may show more), and it rescales every request so
+that its own peak is 100. Two requests are therefore **not comparable**:
 a 50 in one batch is not a 50 in the next. This library fixes that with an **anchor term**: the
 same keyword is included in every batch, and each batch is rescaled by the anchor's values.
 

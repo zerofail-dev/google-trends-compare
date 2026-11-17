@@ -1,7 +1,7 @@
 """Put Google Trends batches on one common scale.
 
-Google Trends compares at most 5 terms per request and rescales every request so its own peak
-is 100. Two requests are therefore not comparable. The fix is an anchor term present in every
+The Google Trends API compares at most 5 terms per request and rescales every request so its own
+peak is 100. Two requests are therefore not comparable. The fix is an anchor term present in every
 batch: each batch is rescaled by the ratio between the anchor's values in a reference batch and
 in that batch.
 

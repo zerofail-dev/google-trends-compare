@@ -31,7 +31,7 @@ rank  keyword                   average  share %  note
    8  wrike                        2.49     1.44
 ```
 
-Eight keywords, two requests to Google, one scale: every keyword is directly comparable with the
+Eight keywords, two Google Trends comparisons sharing the anchor `notion`, one scale: every keyword is directly comparable with the
 others. `average` is the mean interest over the period on that common scale (100 is the single
 highest point of all keywords), and `share %` is each keyword's part of the total.
 
